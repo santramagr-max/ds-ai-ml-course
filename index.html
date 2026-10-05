@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Science, AI & Machine Learning — कोर्स</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#14171c">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar-scrim" id="sidebarScrim"></div>
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <button class="brand" id="logoBtn" style="cursor:pointer;background:none;border:none;">
+      <span class="brand-mark">DS</span>
+      <span class="brand-text">
+        <div class="t1">DS · AI · ML</div>
+        <div class="t2">हिंदी में सीखें</div>
+      </span>
+    </button>
+
+    <div class="overall-progress">
+      <div class="label"><span>कुल Progress</span><span class="pct" id="overallPct">0%</span></div>
+      <div class="bar-track"><div class="bar-fill" id="overallBar" style="width:0%"></div></div>
+      <div class="stats-row" id="statsRow"></div>
+    </div>
+
+    <nav class="nav-modules" id="navModules"></nav>
+
+    <button class="cert-btn" id="certBtn">🎓 Certificate पाएं</button>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
+      <div class="crumb" id="crumb"></div>
+    </div>
+    <div class="view" id="view"></div>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+  if ("serviceWorker" in navigator && (location.protocol === "http:" || location.protocol === "https:")) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    });
+  }
+</script>
+</body>
+</html>
